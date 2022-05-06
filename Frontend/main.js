@@ -1,3 +1,6 @@
-alert('hola mundo');
-var placa;
+
+var plate;
 var date;
+var time;
+
+

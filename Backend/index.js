@@ -3,6 +3,7 @@ const cors = require('cors')
 const TimeValidator = require('./Class/timeValidator')
 const DateValidator = require('./Class/dateValidator')
 const PicoPlaca = require('./Class/picoPlaca')
+const bodyParser = require('body-parser')
 
 const app = express()
 const port = 3000
@@ -18,14 +19,18 @@ app.use(express.json({
     type: "*/*"
 }))
 
-app.use(cors());
+app.use(express.static('public'))
+app.use(express.urlencoded({extended: true}))
+app.use(cors())
 
+app.get('/', (req, res) => {
+    
+    res.send('Hello World!')
+});
 
-app.get('/validate', (req, res) => {
-    const time = req.query.time
-    const date = req.query.date
+app.post('/validate', (req, res) => {
     const picoPlaca = new PicoPlaca()
-    const isValid = picoPlaca.predict()
+    const isValid = picoPlaca.predict(req.body)
     return res.send(isValid)
 })
 

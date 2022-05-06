@@ -2,6 +2,7 @@ const express = require('express')
 const cors = require('cors')
 const TimeValidator = require('./Class/timeValidator')
 const DateValidator = require('./Class/dateValidator')
+const PicoPlaca = require('./Class/picoPlaca')
 
 const app = express()
 const port = 3000
@@ -23,9 +24,8 @@ app.use(cors());
 app.get('/validate', (req, res) => {
     const time = req.query.time
     const date = req.query.date
-    const timeValidator = new TimeValidator('7:00','9:30','16:00', '19:30')
-    const dateValidator = new DateValidator()
-    const isValid = dateValidator.validate(date)
+    const picoPlaca = new PicoPlaca()
+    const isValid = picoPlaca.predict()
     return res.send(isValid)
 })
 

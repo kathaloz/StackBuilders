@@ -23,7 +23,7 @@ class PicoPlaca {
             const lastDigit = data.plate[data.plate.length - 1]
             const day = this.dateValidator.getNumberDay(data.date)
             if (this.dateValidator.validateDays(lastDigit, day)) return true
-            
+
             return !this.timeValidators.some(validator => validator.validate(data.time))
         }
 

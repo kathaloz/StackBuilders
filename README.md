@@ -22,28 +22,12 @@ vehicule's last digit is blacklisted for the day.
 
 ### Solution Description:
 
-This project have been develop with Python3.8 using a web framework to use as input method.
+This project have been develop with JavaScript.
 
 ##### How to run:
 
-- Download the project and enter.
-~~~
-git clone https://github.com/fnando1995/SBProj.git
-cd SBProj
-~~~
-
-- Create a virtual environment and install dependencies. (Python3 must be installed in you Computer).
-~~~
-python3 -m venv env
-source env/bin/activate
-pip install -r requirements           #dependencies
-~~~
-
-- Run development server
-~~~
-python manage.py runserver
-~~~
-
+- Download the project and run index.js from Backend folder with the comand >node index.js
+- Then you can  open the project with the following URL:http://localhost:3000
 
 You can enter the license plate number (7 alphanumeric characters), the date and the time. Finally you can submit with the "Submit" buttom.
 

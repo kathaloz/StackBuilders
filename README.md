@@ -34,4 +34,4 @@ You can enter the license plate number (7 alphanumeric characters), the date and
 After consulting, the application will tell you if the car can be on the road or not.
 
 
-
+Note: All the validations were written on each class but the error if any input is wrong is only displayed on the console.
